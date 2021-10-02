@@ -1,0 +1,65 @@
+<!--- ColorModeSwitcher.stories.mdx --->
+
+import { Box, Link } from '@chakra-ui/react';
+
+import {
+	ArgsTable,
+	Meta,
+	Story,
+	Canvas,
+} from '@storybook/addon-docs';
+
+import { ColorModeSwitcher } from './ColorModeSwitcher';
+
+<Meta
+	argTypes={{
+		handleClose: {
+			action: { onClick: 'handleClose' },
+		},
+	}}
+	title="Portfolio v3/Components/Buttons/Color Mode Switcher"
+	component={ColorModeSwitcher}
+/>
+
+# <Box as="span" color="rgb(32,178,170)">Color Mode Switcher</Box>
+
+---
+
+<Box mt="1rem">
+	<Box as="span" color="rgb(32,178,170)">
+		Color Mode Switcher
+	</Box>
+	&nbsp;is a button component that controls the switching between <Box
+		as="span"
+		color="rgb(36,200,191)"
+	>
+		light
+	</Box>
+	&nbsp;and{' '}
+	<Box as="span" color="rgb(28,156,149)">
+		dark
+	</Box>
+	&nbsp;modes via <Link
+		_hover={{ color: 'rgb(28,156,149)' }}
+		color="rgb(36,200,191)"
+		href="https://chakra-ui.com"
+		isExternal
+	>
+		Chakra-UI
+	</Link>'s <Box as="span" fontStyle="italic">
+		useColorMode
+	</Box> hook.
+</Box>
+
+export const Template = args => <ColorModeSwitcher {...args} />;
+
+<Canvas>
+	<Story args={{ label: true, variant: 'outline' }} name="With Label">
+		{Template.bind({})}
+	</Story>
+	<Story args={{ variant: 'outline' }} name="Without Label">
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+<ArgsTable story="With Label" />

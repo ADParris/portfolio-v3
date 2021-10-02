@@ -1,6 +1,8 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
+import { ColorModeSwitcher } from 'components/Buttons';
+
 interface IComponentProps {}
 
 export const Header: React.FC<IComponentProps> = () => {
@@ -13,6 +15,7 @@ export const Header: React.FC<IComponentProps> = () => {
 			mx="1rem"
 		>
 			<Text>Header</Text>
+			<ColorModeSwitcher />
 		</Flex>
 	);
 };
